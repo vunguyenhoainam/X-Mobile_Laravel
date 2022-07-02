@@ -1,0 +1,283 @@
+.header {
+    padding: 1.5rem 0;
+    background-color: $red;
+    box-shadow: 0px 2px 6px 0px rgb(50 50 50 / 33%);
+    .container {
+        .header__top {
+            @include flex(flex, space-between, center, nowrap);
+            .header-logo-pc {
+                display: none;
+                @include font(3rem, 600, normal);
+                color: $white;
+                text-shadow: 5px 2px 4px $gray;
+                @include mq_min_768 {
+                    display: block;
+                    font-size: 3.2rem;
+                }
+                @include mq_min_1024 {
+                    font-size: 4.8rem;
+                }
+            }
+            .header-logo-sp {
+                max-width: 3.5rem;
+                @include mq_min_768 {
+                    display: none;
+                }
+            }
+            .header-address {
+                max-width: 23rem;
+                padding: 1rem;
+                @include flex(flex, flex-start, center, nowrap);
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 8px;
+                @include mq_max_1024 {
+                    display: none;
+                }
+                .icon-address {
+                    fill: $white;
+                }
+                p {
+                    margin-left: .5rem;
+                    @include font(1.4rem, 600, normal);
+                    color: $white;
+                    @include line-text(1);
+                }
+            }
+            .header-search {
+                position: relative;
+                max-width: 15rem;
+                @include mq_min_350 {
+                    max-width: 20rem;
+                }
+                input {
+                    width: 100%;
+                    padding: 1rem 4rem 1rem 2rem;
+                    @include font(1.5rem, 500, normal);
+                    outline: none;
+                    color: $gray;
+                    border: 0;
+                    border-radius: 8px;
+                    @include line-text(1);
+                    
+                }
+                .icon-search {
+                    position: absolute;
+                    top: 50%;
+                    right: 1.5rem;
+                    transform: translateY(-50%);
+                    font-size: 1.8rem;
+                    color: $gray;
+                    cursor: pointer;
+                }
+            }
+            .header-hotline {
+                display: none;
+                @include mq_min_768 {
+                    @include flex(flex, flex-start, center, nowrap);
+                }
+                .icon-hotline {
+                    fill: $white;
+                }
+                p {
+                    margin-left: 1rem;
+                    span {
+                        display: block;
+                        @include font(1.6rem, 600, normal);
+                        color: $white;
+                        &:last-child {
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
+                &:hover {
+                    p {
+                        span {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+            .header-cart {
+                position: relative;
+                @include flex(flex, flex-start, center, nowrap);
+                .icon-cart {
+                    font-size: 2.2rem;
+                    color: $white;
+                }
+                .notifi {
+                    position: absolute;
+                    top: -14px;
+                    left: 18px;
+                    width: 20px;
+                    height: 20px;
+                    @include flex(flex, center, center, nowrap);
+                    @include font(1.3rem, 600, normal);
+                    color: $white;
+                    background-color: orange;
+                    border-radius: 50%;
+                }
+                p {
+                    display: none;
+                    margin-left: 1rem;
+                    @include font(1.4rem, 600, normal);
+                    color: $white;
+                    @include mq_min_1024 {
+                        display: block;
+                    }
+                }
+            }
+            .btn-menu-sp {
+                position: relative;
+                width: 2.5rem;
+                height: 4rem;
+                cursor: pointer;
+                z-index: 9999;
+                span {
+                    position: absolute;
+                    right: 0;
+                    transform: translateY(-50%);
+                    display: block;
+                    width: 2.5rem;
+                    height: .3rem;
+                    border-radius: 10px;
+                    background-color: $white;
+                    // @include mq_max_1024 {
+                    //     background-color: $gray;
+                    // }
+                    &:first-child {
+                        top: 30%;
+                    }
+                    &:nth-child(2) {
+                        top: 50%;
+                    }
+                    &:last-child {
+                        top: 70%;
+                    }
+                }
+            }
+            .active {
+                span {
+                    &:first-child {
+                        top: 50%;
+                        transform: translateY(-50%) rotate(45deg);
+                    }
+                    &:nth-child(2) {
+                        display: none;
+                    }
+                    &:last-child {
+                        top: 50%;
+                        transform: translateY(-50%) rotate(-45deg);
+                    }
+                    background-color: $black;
+                }
+            }
+        }
+        .header__bottom {
+            @include mq_max_1024 {
+                display: none;
+            }
+            margin-top: 1rem;
+            ul {
+                padding: 0 1.5rem;
+                @include flex(flex, space-between, center, nowrap);
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 8px;
+                li {
+                    position: relative;
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        bottom: -20px;
+                        left: 0;
+                        width: 100%;
+                        height: 30px;
+                    }
+                    &:hover {
+                        .sub-menu {
+                            transform: translateY(0);
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                    a {
+                        padding: 1rem 0;
+                        @include flex(flex, flex-start, center, nowrap);
+                        @include font(1.4rem, 600, normal);
+                        text-transform: uppercase;
+                        color: $white;
+                        @include mq_min_1200 {
+                            font-size: 1.6rem;
+                        }
+                        i {
+                            font-size: 2rem;
+                            margin-right: 1rem;
+                        }
+                    }
+                    .sub-menu {
+                        position: absolute;
+                        top: 45px;
+                        left: 0;
+                        width: 50rem;
+                        padding: 1rem;
+                        border-radius: 8px;
+                        background-color: $white;
+                        box-shadow: 0px 2px 6px 0px rgb(50 50 50 / 33%);
+                        @include flex(flex, flex-start, center, wrap);
+                        transition: all .5s ease;
+                        transform: translateY(30%);
+                        opacity: 0;
+                        visibility: hidden;
+                        z-index: 999;
+                        a {
+                            padding: 1rem;
+                            width: calc(100% / 3);
+                            @include font(1.4rem, 500, normal);
+                            color: $gray;
+                            transition: all .3s ease;
+                            &:hover {
+                                color: $red;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .menu-sp {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100vh;
+            transform: translateX(100%);
+            transition: all .5s ease;
+            opacity: 0;
+            visibility: hidden;
+            background-color: $white;
+            z-index: 999;
+            h2 {
+                padding: 2rem;
+                @include font(4rem, 600, normal);
+                color: $red;
+                text-shadow: 5px 2px 4px #5f5f5f;
+            }
+            ul {
+                padding: 0 2rem;
+                li {
+                    padding: 2rem;
+                    border-bottom: 1px solid $gray-2;
+                    a {
+                        @include font(1.8rem, 600, normal);
+                    }
+                    i {
+                        margin-right: 1rem;
+                    }
+                }
+            }
+        }
+        .active {
+            transform: translateX(0);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}

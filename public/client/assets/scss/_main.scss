@@ -1,0 +1,290 @@
+.main {
+    .banner {
+        background: url("../images/pc/background.png") no-repeat;
+        background-size: contain;
+        background-position: center;
+        .container {
+            margin: 1rem auto;
+            padding: 0;
+            @include mq_min_768 {
+                padding: 0 1.5rem;
+            }
+            @include mq_min_1024 {
+                @include flex(flex, space-between, normal, nowrap);
+            }
+            .banner__left {
+                .slide-wrap {
+                    position: relative;
+                    .list-slide-item {
+                        .slide-item {
+                            img {
+                                width: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                    .control {
+                        .btn-control {
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            width: 4rem;
+                            height: 4rem;
+                            border-radius: 50%;
+                            background-color: #e5e5e5;
+                            @include flex(flex, center, center, nowrap);
+                            opacity: 0.8;
+                            transition: all .3s ease;
+                            &:active {
+                                opacity: .6;
+                            }
+                            cursor: pointer;
+                        }
+                        .control-left {
+                            left: 25px;
+                        }
+                        .control-right {
+                            right: 25px;
+                        }
+                    }
+                }
+                .text-slide-wrap {
+                    background-color: $gray-1;
+                    border-radius: 8px;
+                    .wrap {
+                        @include font(1.6rem, 600, 1.4);
+                        @include flex(flex, space-between, center, nowrap);
+                        a {
+                            width: calc((100% / 4) - .5rem);
+                            padding: 1rem 2rem;
+                            text-align: center;
+                            transition: all .3s ease;
+                            &:not(:last-child){
+                                border-right: 1px solid #c4c4c4;
+                            }
+                            &:hover {
+                                color: $red;
+                            }
+                        }
+                    }
+                }
+                @include mq_min_1024 {
+                    width: calc(70% - .5rem);
+                    height: 100%;
+                }
+            }
+            .banner__right {
+                @include mq_min_1024 {
+                    width: calc(30% - .5rem);
+                }
+                a {
+                    &:not(:first-child) {
+                        margin-top: .5rem;
+                    }
+                }
+            }
+            img {
+                border-radius: 0;
+                @include mq_min_1024 {
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+
+    .products {
+        margin: 6rem 0;
+        background: url("../images/pc/background.png") no-repeat;
+        background-size: contain;
+        background-position: center;
+        .product-title {
+            @include flex(flex, space-between, center, nowrap);
+            h2 {
+                position: relative;
+                display: inline-block;
+                @include font(2.2rem, 600, 1.4);
+                text-transform: uppercase;
+                &::after {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    bottom: -10px;
+                    width: 100%;
+                    height: 3px;
+                    background-color: $red;
+                    border-radius: 30px;
+                }
+            }
+            .red-more {
+                display: inline-block;
+                padding: .5rem 1.5rem;
+                border: 1px solid $gray-2;
+                border-radius: 30px;
+                @include font(1.5rem, 600, normal);
+                transition: all .3s ease;
+                background-color: $gray-1;
+                cursor: pointer;
+                &:hover {
+                    color: $white;
+                    background-color: $gray-2;
+                }
+                i {
+                    font-size: 12px;
+                    margin-left: .5rem;
+                }
+
+            }
+        }
+        .list-products {
+            margin: 2.5rem -1rem;
+            @include flex(flex, flex-start, normal, wrap);
+            .product-item {
+                width: calc(100% / 2);
+                padding: 1.5rem;
+                transition: all .3s ease;
+                @include mq_min_768 {
+                    width: calc(100% / 3);
+                }
+                @include mq_min_1024 {
+                    width: calc(100% / 4);
+                }
+                @include mq_min_1200 {
+                    width: calc(100% / 5);
+                }
+                &:hover {
+                    transform: translateY(-10px);
+                }
+                .product-wrap {
+                    padding: 2rem 1.5rem;
+                    background-color: $white;
+                    border-radius: 8px;
+                    box-shadow: 0px 2px 6px 0px rgb(50 50 50 / 33%);
+                    .product-content {
+                        h3 {
+                            @include font(1.4rem, 600, 1.4);
+                            margin: 1rem 0;
+                            @include line-text(2);
+                        }
+                        .info {
+                            @include flex(flex, flex-start, center, nowrap);
+                            @include font(.8rem, 500, normal);
+                            li {
+                                padding: .3rem .5rem;
+                                border: 1px solid $gray-2;
+                                border-radius: 30px;
+                                &:not(:first-child) {
+                                    margin-left: .5rem;
+                                }
+                            }
+                            @include mq_min_768 {
+                                font-size: 1.2rem;
+                            }
+                        }
+                        .price {
+                            margin: 1rem 0;
+                            @include font(1rem, 600, 1.4);
+                            @include flex(flex, space-between, center, nowrap);
+                            .price-new {
+                                color: $red;
+                            }
+                            .price-old {
+                                color: $gray;
+                                text-decoration: line-through
+                            }
+                            @include mq_min_768 {
+                                font-size: 1.4rem;
+                            }
+                        }
+                        .rating {
+                            @include mq_min_768 {
+                                @include flex(flex, space-between, center, nowrap);
+                            }
+                            .list-star {
+                                margin-right: 1rem;
+                                @include flex(flex, flex-start, center, nowrap);
+                                .icon-start {
+                                    font-size: 1.3rem;
+                                    color: $gray-2;
+                                    &:not(:first-child) {
+                                        margin-left: .3rem;
+                                    }
+                                }
+                                .active {
+                                    color: #F59E0B;
+                                }
+                            }
+                            span {
+                                display: inline-block;
+                                margin-top: 1rem;
+                                @include font(1.4rem, 500, normal);
+                                @include mq_min_768 {
+                                    margin-top: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .reviews {
+        .reviews-title {
+            @include flex(flex, space-between, center, nowrap);
+            h2 {
+                position: relative;
+                display: inline-block;
+                @include font(2.2rem, 600, 1.4);
+                text-transform: uppercase;
+                &::after {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    bottom: -10px;
+                    width: 100%;
+                    height: 3px;
+                    background-color: $red;
+                    border-radius: 30px;
+                }
+            }
+            .red-more {
+                display: inline-block;
+                padding: .5rem 1.5rem;
+                border: 1px solid $gray-2;
+                border-radius: 30px;
+                @include font(1.5rem, 600, normal);
+                transition: all .3s ease;
+                background-color: $gray-1;
+                cursor: pointer;
+                &:hover {
+                    color: $white;
+                    background-color: $gray-2;
+                }
+                i {
+                    font-size: 12px;
+                    margin-left: .5rem;
+                }
+
+            }
+        }
+        .list-review {
+            margin: 3.5rem 0;
+            @include mq_min_768 {
+                @include flex(flex, space-between, center, nowrap);
+            }
+            .review-product {
+                margin-top: 2rem;
+                @include mq_min_768 {
+                    margin-top: 0;
+                    width: calc((100% / 3) - 1.5rem);
+                }
+                iframe {
+                    width: 100%;
+                    height: 21rem;
+                    object-fit: cover;
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+}
