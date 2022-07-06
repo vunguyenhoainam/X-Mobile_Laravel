@@ -37,5 +37,8 @@
 {{-- 
     <script src="{{ asset('admin/assets/js/listProducts.js') }}"></script>
     <script src="{{ asset('admin/assets/js/logout.js') }}"></script> --}}
+
+    @yield('script')
+    
   </body>
 </html>

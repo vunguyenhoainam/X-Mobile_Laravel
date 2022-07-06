@@ -6,7 +6,7 @@
 
 <div class="content p-5">
     <h2 class="mb-3 text-primary">Create Role</h2>
-    <form action="{{ route('roles.store') }}" method="post">
+    <form action="{{ route('roles.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label class="form-label">Name</label>
