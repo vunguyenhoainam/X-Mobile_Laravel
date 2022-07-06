@@ -293,7 +293,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_iphone_1.jpg" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_iphone_1.jpg') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>iPhone 13 Pro Max 128GB | Chính hãng VN/A</h3>
@@ -322,7 +322,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_iphone_2.jpg" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_iphone_2.jpg') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>iPhone 13 Pro Max 128GB | Chính hãng VN/A</h3>
@@ -351,7 +351,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_iphone_3.jpg" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_iphone_3.jpg') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>iPhone 13 Pro Max 128GB | Chính hãng VN/A</h3>
@@ -380,7 +380,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_iphone_4.jpg" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_iphone_4.jpg') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>iPhone 13 Pro Max 128GB | Chính hãng VN/A</h3>
@@ -409,7 +409,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_iphone_1.jpg" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_iphone_1.jpg') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>iPhone 13 Pro Max 128GB | Chính hãng VN/A</h3>
@@ -439,7 +439,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_iphone_1.jpg" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_iphone_1.jpg') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>iPhone 13 Pro Max 128GB | Chính hãng VN/A</h3>
@@ -468,7 +468,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_iphone_2.jpg" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_iphone_2.jpg') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>iPhone 13 Pro Max 128GB | Chính hãng VN/A</h3>
@@ -497,7 +497,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_iphone_3.jpg" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_iphone_3.jpg') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>iPhone 13 Pro Max 128GB | Chính hãng VN/A</h3>
@@ -526,7 +526,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_iphone_4.jpg" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_iphone_4.jpg') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>iPhone 13 Pro Max 128GB | Chính hãng VN/A</h3>
@@ -555,7 +555,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_iphone_1.jpg" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_iphone_1.jpg') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>iPhone 13 Pro Max 128GB | Chính hãng VN/A</h3>
@@ -598,7 +598,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_ipad_1.png" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_ipad_1.png') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>iPhone 13 Pro Max 128GB | Chính hãng VN/A</h3>
@@ -627,7 +627,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_ipad_2.png" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_ipad_2.png') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>iPhone 13 Pro Max 128GB | Chính hãng VN/A</h3>
@@ -656,7 +656,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_ipad_3.png" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_ipad_3.png') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>iPhone 13 Pro Max 128GB | Chính hãng VN/A</h3>
@@ -685,7 +685,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_ipad_4.png" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_ipad_4.png') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>iPhone 13 Pro Max 128GB | Chính hãng VN/A</h3>
@@ -714,7 +714,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_ipad_5.png" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_ipad_5.png') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>iPhone 13 Pro Max 128GB | Chính hãng VN/A</h3>
@@ -744,7 +744,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_ipad_1.png" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_ipad_1.png') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>iPhone 13 Pro Max 128GB | Chính hãng VN/A</h3>
@@ -773,7 +773,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_ipad_2.png" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_ipad_2.png') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>iPhone 13 Pro Max 128GB | Chính hãng VN/A</h3>
@@ -802,7 +802,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_ipad_3.png" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_ipad_3.png') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>iPhone 13 Pro Max 128GB | Chính hãng VN/A</h3>
@@ -831,7 +831,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_ipad_4.png" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_ipad_4.png') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>iPhone 13 Pro Max 128GB | Chính hãng VN/A</h3>
@@ -860,7 +860,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_ipad_5.png" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_ipad_5.png') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>iPhone 13 Pro Max 128GB | Chính hãng VN/A</h3>
@@ -903,7 +903,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_aw_1.jpg" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_aw_1.jpg') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>Apple Watch Series 6 40mm (GPS) Viền Nhôm Dây Cao Su | Chính hãng VN/A</h3>
@@ -932,7 +932,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_aw_2.jpg" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_aw_2.jpg') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>Apple Watch Series 6 40mm (GPS) Viền Nhôm Dây Cao Su | Chính hãng VN/A</h3>
@@ -961,7 +961,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_aw_3.jpg" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_aw_3.jpg') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>Apple Watch Series 6 40mm (GPS) Viền Nhôm Dây Cao Su | Chính hãng VN/A</h3>
@@ -990,7 +990,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_aw_4.jpg" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_aw_4.jpg') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>Apple Watch Series 6 40mm (GPS) Viền Nhôm Dây Cao Su | Chính hãng VN/A</h3>
@@ -1019,7 +1019,7 @@
                     <a href="#" class="product-item">
                         <div class="product-wrap">
                             <div class="product-image">
-                                <img src="./assets/images/pc/image_aw_5.jpg" alt="">
+                                <img src="{{ asset('client/assets/images/pc/image_aw_5.jpg') }}" alt="">
                             </div>
                             <div class="product-content">
                                 <h3>Apple Watch Series 6 40mm (GPS) Viền Nhôm Dây Cao Su | Chính hãng VN/A</h3>

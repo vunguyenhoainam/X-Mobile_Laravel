@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <div class="role-list p-5">
+    <div class="content p-5">
         <h2 class="mb-3">User List</h2>
         <div class="btn-create mb-3 d-flex justify-content-end">
             <a href="{{ route('users.create') }}" class="btn btn-primary">Create User</a>

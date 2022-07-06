@@ -8,7 +8,6 @@ use App\Http\Requests\Products\UpdateProductRequest;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductDetail;
-use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -37,22 +36,12 @@ class ProductController extends Controller
 
     public function store(CreateProductRequest $request)
     {
-        // dd($request);
-        // $dataCreate = $request->except('sizes');
-        // $sizes = $request->sizes ? json_decode($request->sizes) : [];
         $dataCreate = $request->all();
         $product = $this->product->create($dataCreate);
         $dataCreate['image'] = $this->product->saveImage($request);
         $product->images()->create(['url' => $dataCreate['image']]);
         $product->categories()->attach($dataCreate['category_ids']);
-        // $sizeArray = [];
-        // foreach($sizes as $size)
-        // {
-        //     $sizeArray[] = ['size' => $size->size, 'quantity' => $size->quantity, 'product_id' => $product->id];
-        // }
-
-        // $product->details()->insert($sizeArray);
-        // return redirect()->route('products.index')->with(['message' => 'create product success']);
+        
         return redirect('products');
     }
 

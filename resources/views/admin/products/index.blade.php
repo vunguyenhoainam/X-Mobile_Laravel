@@ -1,18 +1,10 @@
 @extends('admin.layouts.app')
 @section('title', 'Products')
 @section('content')
-    <div class="card p-5">
-
-        @if (session('message'))
-            <h1 class="text-primary">{{ session('message') }}</h1>
-        @endif
-
-        <h1>
-            Products list
-        </h1>
-        <div>
-            <a href="{{ route('products.create') }}" class="btn btn-primary">Create Product</a>
-
+    <div class="content p-5">
+        <h2 class="mb-3">Products List</h2>
+        <div class="btn-create mb-3 d-flex justify-content-end">
+            <a href="{{ route('users.create') }}" class="btn btn-primary">Create Product</a>
         </div>
         <div>
             <table class="table table-hover">
