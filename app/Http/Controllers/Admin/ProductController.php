@@ -19,7 +19,7 @@ class ProductController extends Controller
     {
         $this->product = $product;
         $this->category = $category;
-        $this->productDetail =  $productDetail;
+        $this->productDetail = $productDetail;
     }
 
     public function index()
@@ -41,7 +41,6 @@ class ProductController extends Controller
         $dataCreate['image'] = $this->product->saveImage($request);
         $product->images()->create(['url' => $dataCreate['image']]);
         $product->categories()->attach($dataCreate['category_ids']);
-        
         return redirect('products');
     }
 

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Categories\CreateCategoryRequest;
-use Illuminate\Http\Request;
+use App\Http\Requests\Categories\UpdateCategoryRequest;
 use App\Models\Category;
 
 class CategoryController extends Controller
@@ -24,52 +24,39 @@ class CategoryController extends Controller
 
     public function create()
     {
-        $parentCategories =  $this->category->getParents();
-        return view('admin.categories.create', compact('parentCategories'));
+        return view('admin.categories.create');
     }
 
     public function store(CreateCategoryRequest $request)
     {
         $dataCreate = $request->all();
-
-        $category = $this->category->create($dataCreate);
-
-        return redirect()->route('categories.index')->with(['message' => 'create new category: '. $category->name." success"]);
+        $this->category->create($dataCreate);
+        return redirect()->route('categories.index');
     }
 
-
-    public function show($id)
-    {
-        //
-    }
+    // public function show($id)
+    // {
+    //     //
+    // }
 
     public function edit($id)
     {
-        $category = $this->category->with('childrens')->findOrFail($id);
-        $parentCategories =  $this->category->getParents();
-        return view('admin.categories.edit', compact('category', 'parentCategories'));
+        $category = $this->category->findOrFail($id);
+        return view('admin.categories.edit', compact('category'));
     }
 
-
-    public function update(Request $request, $id)
+    public function update(UpdateCategoryRequest $request, $id)
     {
-
         $dataUpdate = $request->all();
-
         $category = $this->category->findOrFail($id);
-
         $category->update($dataUpdate);
-
-        return redirect()->route('categories.index')->with(['message' => 'Update  category: '. $category->name." success"]);
-
+        return redirect()->route('categories.index');
     }
 
     public function destroy($id)
     {
         $category = $this->category->findOrFail($id);
-
         $category->delete();
-
-        return redirect()->route('categories.index')->with(['message' => 'Delete  category: '. $category->name." success"]);
+        return redirect()->route('categories.index');
     }
 }

@@ -25,7 +25,6 @@ class UserController extends Controller
     public function index()
     {
         $users =  $this->user->latest('id')->paginate(5);
-
         return view('admin.users.index', compact('users'));
     }
 
@@ -71,7 +70,7 @@ class UserController extends Controller
         {
             $dataCreate['password'] = Hash::make($request->password);
         }
-        $currentImage =  $user->images ? $user->images->first()->url : '';
+        $currentImage =  $user->images->count() > 0 ? $user->images->first()->url : '';
         $dataUpdate['image'] = $this->user->updateImage($request, $currentImage);
 
         $user->update($dataUpdate);

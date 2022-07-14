@@ -42,6 +42,4 @@ trait HandleImageTrait
             unlink($this->path .$imageName);
         }
     }
-
-
 }

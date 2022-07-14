@@ -18,6 +18,7 @@ class ProductFactory extends Factory
             'description' => $this->faker->text(),
             'sale' => 0,
             'price' => 2000000, 
+            'category_id' => $this->faker->numberBetween(1,10),
         ];
     }
 }

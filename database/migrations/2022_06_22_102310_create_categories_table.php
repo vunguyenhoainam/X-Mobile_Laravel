@@ -16,20 +16,32 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
+        // Schema::create('categories', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->string('name');
+        //     $table->unsignedBigInteger('parent_id');
+        //     $table->timestamps();
+        // });
+
+        // Schema::create('category_product', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->foreignIdFor(Category::class)->constrained()->cascadeOnDelete();
+        //     $table->foreignIdFor(Product::class)->constrained()->cascadeOnDelete();
+        //     $table->timestamps();
+        // });
+
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->unsignedBigInteger('parent_id');
+            $table->string('category_name');
             $table->timestamps();
         });
 
-        Schema::create('category_product', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('parent_id');
-            $table->foreignIdFor(Category::class)->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(Product::class)->constrained()->cascadeOnDelete();
-            $table->timestamps();
-        });
+        // Schema::create('category_product', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->foreignIdFor(Category::class)->constrained()->cascadeOnDelete();
+        //     $table->foreignIdFor(Product::class)->constrained()->cascadeOnDelete();
+        //     $table->timestamps();
+        // });
     }
 
     /**
@@ -39,7 +51,7 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category_product');
+        // Schema::dropIfExists('category_product');
         Schema::dropIfExists('categories');
     }
 }
