@@ -14,17 +14,6 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
-        // Schema::create('products', function (Blueprint $table) {
-        //     $table->id();
-        //     $table->string('name');
-        //     $table->text('description');
-        //     $table->smallInteger('sale')->default(0);
-        //     $table->double('price');
-        //     $table->unsignedBigInteger('category_id');
-        //     // $table->integer('category_id')->unsigned();
-        //     // $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
-        //     $table->timestamps();
-        // });
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');

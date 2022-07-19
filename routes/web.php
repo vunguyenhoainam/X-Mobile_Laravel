@@ -4,9 +4,10 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Client\CartController;
+use App\Http\Controllers\Client\HomeController;
+use App\Http\Controllers\Client\ProductController as ClientProductController;
 use Illuminate\Support\Facades\Route;
-
-// namespace App\Http\Controllers\Admin\RoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,17 +20,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('client.layouts.app');
+Route::get('/', [ClientProductController::class, 'index'])->name('client.products.index');
+Route::get('/dashboard', [RoleController::class, 'index'])->name('admin.roles.index');
+
+Route::get('product-detail/{id}', [ClientProductController::class, 'show'])->name('client.product.show');
+
+// Route::middleware('auth')->group(function(){
+    // Route::post('add-to-cart', [CartController::class, 'store'])->name('client.carts.add');
+// });
+
+Route::group(['prefix'=>'cart'], function(){
+    Route::get('show-cart', [CartController::class, 'showCart'])->name('client.cart.showCart');
+    Route::post('add-cart/{id}', [CartController::class, 'addCart'])->name('client.cart.addCart');
+    Route::get('delete-cart/{id}', [CartController::class, 'deleteCart'])->name('client.cart.deleteCart');
 });
 
-Route::get('/dashboard', function () {
-    return view('admin.dashboard.index');
-})->name('dashboard');
-
 // Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('roles', RoleController::class);
 Route::resource('users', UserController::class);

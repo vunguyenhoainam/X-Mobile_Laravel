@@ -28,7 +28,6 @@
                     <td class="align-middle">{{ $user->id }}</td>
                     <td class="align-middle">
                         <img width="35px" height="35px" style="border-radius: 3px;" src="{{ $user->images->count() > 0 ? $user->image_path : asset('upload/avatar_default.jpg') }}" alt="">
-
                     </td>
                     <td class="align-middle">{{ $user->name }}</td>
                     <td class="align-middle">{{ $user->email }}</td>

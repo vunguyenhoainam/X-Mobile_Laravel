@@ -23,7 +23,6 @@ class CreateCartProductsTable extends Migration
             $table->string('product_quantity');
             $table->string('product_price');
             
-            $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Product::class)->constrained()->cascadeOnDelete();
             $table->timestamps();
         });

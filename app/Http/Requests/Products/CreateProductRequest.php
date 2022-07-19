@@ -25,11 +25,11 @@ class CreateProductRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'image' => 'required|image|mimes:png,jpg,PNG,jpec',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'description' => 'required',
             'sale' => 'required',
             'price' => 'required',
-            'category_ids' => 'required'
+            'category_id' => 'required'
         ];
     }
 }

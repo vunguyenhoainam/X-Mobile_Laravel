@@ -8,14 +8,14 @@ trait HandleImageTrait
 {
     protected $path = 'upload/';
 
-    public function veryfy($request)
+    public function verify($request)
     {
         return $request->has('image');
     }
 
     public function saveImage($request)
     {
-        if($this->veryfy($request))
+        if($this->verify($request))
         {
             $image = $request->file('image');
             $name = time() . '.' . $image->getClientOriginalExtension();
@@ -26,20 +26,19 @@ trait HandleImageTrait
 
     public function updateImage($request, $currentImage)
     {
-        if($this->veryfy($request))
+        if($this->verify($request))
         {
             $this->deleteImage($currentImage);
-
             return $this->saveImage($request);
         }
-
         return $currentImage;
     }
-    public function deleteImage($imageName)
+
+    public function deleteImage($imageCurrentName)
     {
-        if($imageName && file_exists($this->path .$imageName))
+        if($imageCurrentName && file_exists($this->path . $imageCurrentName))
         {
-            unlink($this->path .$imageName);
+            unlink($this->path . $imageCurrentName);
         }
     }
 }

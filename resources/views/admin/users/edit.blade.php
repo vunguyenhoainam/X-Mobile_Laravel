@@ -5,7 +5,7 @@
         <h2 class="mb-3 text-primary">Edit User</h2>
         <form action="{{ route('users.update', $user->id) }}" method="post" enctype="multipart/form-data">
             @csrf
-            @method('put')
+            @method('PUT')
 
             <div class="mb-3">
                 <label>Image</label>
@@ -103,7 +103,6 @@
 
 
 @section('script')
-
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
         crossorigin="anonymous"></script>
     <script>

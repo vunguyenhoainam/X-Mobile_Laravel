@@ -30,7 +30,7 @@ class ProductController extends Controller
 
     public function create()
     {
-        $categories = $this->category->get(['id','name']);
+        $categories = $this->category->get(['id','category_name']);
         return view('admin.products.create', compact('categories'));
     }
 
@@ -40,7 +40,6 @@ class ProductController extends Controller
         $product = $this->product->create($dataCreate);
         $dataCreate['image'] = $this->product->saveImage($request);
         $product->images()->create(['url' => $dataCreate['image']]);
-        $product->categories()->attach($dataCreate['category_ids']);
         return redirect('products');
     }
 
@@ -53,29 +52,19 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product =  $this->product->with(['details', 'categories'])->findOrFail($id);
-        $categories = $this->category->get(['id','name']);
+        $categories = $this->category->get(['id','category_name']);
         return view('admin.products.edit', compact('categories', 'product'));
     }
 
     public function update(UpdateProductRequest $request, $id)
     {
-        $dataUpdate = $request->except('sizes');
-        $sizes = $request->sizes ? json_decode($request->sizes) : [];
+        $dataUpdate = $request->all();
         $product = $this->product->findOrFail($id);
-        $currentImage =  $product->images ? $product->images->first()->url : '';
+        $currentImage =  $product->images->count() > 0 ? $product->images->first()->url : '';
         $dataUpdate['image'] = $this->product->updateImage($request, $currentImage);
-
         $product->update($dataUpdate);
-
         $product->images()->create(['url' => $dataUpdate['image']]);
-        $product->assignCategory($dataUpdate['category_ids']);
-        $sizeArray = [];
-        foreach($sizes as $size)
-        {
-            $sizeArray[] = ['size' => $size->size, 'quantity' => $size->quantity, 'product_id' => $product->id];
-        }
-        $product->details()->insert($sizeArray);
-        return redirect()->route('products.index')->with(['message' => 'Update product success']);
+        return redirect()->route('products.index');
     }
 
     public function destroy($id)
