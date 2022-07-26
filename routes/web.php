@@ -32,6 +32,7 @@ Route::get('product-detail/{id}', [ClientProductController::class, 'show'])->nam
 Route::group(['prefix'=>'cart'], function(){
     Route::get('show-cart', [CartController::class, 'showCart'])->name('client.cart.showCart');
     Route::post('add-cart/{id}', [CartController::class, 'addCart'])->name('client.cart.addCart');
+    Route::post('buy-now/{id}', [CartController::class, 'buyNow'])->name('client.cart.buyNow');
     Route::get('delete-cart/{id}', [CartController::class, 'deleteCart'])->name('client.cart.deleteCart');
 });
 

@@ -1,0 +1,156 @@
+.main {
+    .detail {
+        background: url("../images/pc/background.png") no-repeat;
+        background-size: contain;
+        background-position: center;
+        .container {
+            margin: 2rem auto;
+            .breadcrumb {
+                @include flex(flex, flex-start, center, nowrap);
+                li {
+                    @include font(1.4rem, 500, normal);
+                    @include mq_min_768 {
+                        @include font(1.6rem, 500, normal);
+                    }
+                    &:not(:first-child) {
+                        position: relative;
+                        margin-left: 2.2rem;
+                        &::before {
+                            position: absolute;
+                            content: ">";
+                            top: 50%;
+                            left: -15px;
+                            transform: translateY(-50%);
+                            color: $black;
+                        }
+                    }
+                }
+            }
+            .product-detail {
+                margin: 2rem 0;
+                .product-name {
+                    @include font(1.8rem, 600, normal);
+                    @include mq_min_768 {
+                        @include font(2.4rem, 500, normal);
+                    }
+                }
+                .content {
+                    margin-top: 1.5rem;
+                    @include mq_min_768 {
+                        margin-top: 3rem;
+                        @include flex(flex, space-between, normal, nowrap);
+                    }
+                    .content-left {
+                        padding: 2.5rem;
+                        @include mq_min_768 {
+                            width: calc(40% - 1rem);
+                        }
+                    }
+                    .content-right {
+                        @include mq_min_768 {
+                            width: calc(60% - 1rem);
+                        }
+                        .product-price {
+                            @include flex(flex, flex-start, center, nowrap);
+                            h3 {
+                                @include font(1.8rem, 600, normal);
+                                color: $red;
+                                @include mq_min_768 {
+                                    font-size: 2.2rem;
+                                }
+                            }
+                            p {
+                                margin: 0 1rem 0 2rem;
+                                @include font(1.6rem, 500, normal);
+                                text-decoration: line-through;
+                            }
+                            span {
+                                padding: .5rem .8rem;
+                                background-color: $red;
+                                border-radius: 5px;
+                                color: $white;
+                                @include font(1.4rem, 600, normal);
+                            }
+                        }
+                        .quantity {
+                            margin-top: 2rem;
+                            @include flex(flex, flex-start, center, nowrap);
+                            p {
+                                @include font(1.6rem, 600, normal);
+                            }
+                            input {
+                                margin-left: 1rem;
+                                padding: .2rem .5rem;
+                                width: 10%;
+                                outline: none;
+                            }
+                        }
+                        .description {
+                            padding: 2rem 0;
+                            p {
+                                margin-bottom: .5rem;
+                                @include font(1.6rem, 600, normal);
+                            }
+                            & > div {
+                                padding: 0 0 0 2rem;
+                            }
+                        }
+                        .warranty {
+                            background-color: #fffae7;
+                            border-radius: 8px;
+                            li {
+                                @include font(1.6rem, 500, normal);
+                                i {
+                                    color: #FBC500;
+                                }
+                                &:first-child {
+                                    padding: 1rem;
+                                    background-color: $red;
+                                    border-radius: 8px;
+                                    @include font(1.6rem, 600, normal);
+                                    color: $white;
+                                    opacity: .9;
+                                }
+                                &:not(:first-child) {
+                                    padding: 1rem;
+                                }
+                                &:last-child {
+                                    padding-bottom: 2rem;
+                                }
+                            }
+                        }
+                        .list-btn {
+                            margin: 3rem 0 4rem;
+                            @include flex(flex, space-between, normal, nowrap);
+                            .buy-now {
+                                width: 100%;
+                                padding: .8rem 3rem;
+                                color: $white;
+                                text-align: center;
+                                background-color: $red;
+                                border: none;
+                                border-radius: 8px;
+                                @include font(1.4rem, 400, normal);
+                                cursor: pointer;
+                                p {
+                                    @include font(1.8rem, 600, normal);
+                                }
+                            }
+                            .add-cart {
+                                margin-left: 1.5rem;
+                                padding: 0 1.8rem;
+                                @include flex(flex, center, center, nowrap);
+                                @include font(2rem, 600, normal);
+                                color: $white;
+                                border: none;
+                                background-color: #FBC500;
+                                border-radius: 8px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

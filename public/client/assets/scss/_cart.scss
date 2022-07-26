@@ -1,0 +1,160 @@
+.main {
+    .cart {
+        max-width: 80rem;
+        margin: 1rem auto 0;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        @include mq_min_768{
+            margin-top: 3rem;
+        }
+        @include mq_min_1024{
+            box-shadow: 0 0 8px #ddd !important;
+        }
+        .cart-title {
+            @include flex(flex, space-between, center, nowrap);
+            margin: 1.5rem 0;
+            @include font(1.6rem, 600, normal);
+            color: $red;
+            svg {
+                fill: $red;
+            }
+            h4 {
+                font-size: 1.6rem;
+                @include mq_min_768{
+                    font-size: 2rem;
+                }
+                .icon-cart {
+                    margin-right: .3rem;
+                }
+            }
+        }
+        .list-product {
+            li {
+                padding: 1.5rem;
+                @include flex(flex, space-between, center, wrap);
+                box-shadow: 0 0 8px #ddd !important;
+                border-radius: 5px;
+                @include mq_min_768 {
+                    @include flex(flex, space-between, center, nowrap);
+                }
+                img {
+                    max-width: 5rem;
+                    object-fit: cover;
+                    @include mq_min_768{
+                        min-width: 12rem;
+                    }
+                }
+                &:not(:first-child) {
+                    margin-top: 1.2rem;
+                }
+                .info-detail {
+                    margin: 0 auto 0 2rem;
+                    .product-name {
+                        max-width: 22rem;
+                        @include line_text(1);
+                        @include font(1.6rem, 600, normal);
+                        @include mq_min_768 {
+                            min-width: 40rem;
+                        }
+                    }
+                    .product-price {
+                        margin: 1rem 0;
+                        @include flex(flex, flex-start, center, nowrap);
+                        h3 {
+                            @include font(1.6rem, 600, normal);
+                            color: $red;
+                        }
+                        p {
+                            margin: 0 1rem 0 2rem;
+                            @include font(1.4rem, 500, normal);
+                            text-decoration: line-through;
+                        }
+                        span {
+                            padding: .5rem .8rem;
+                            background-color: $red;
+                            border-radius: 5px;
+                            color: $white;
+                            @include font(1rem, 600, normal);
+                        }
+                    }
+                    .product-quantity {
+                        @include font(1.4rem, 600, normal);
+                    }
+                }
+                .btn-delete-cart {
+                    margin-top: 2rem;
+                    padding: .5rem .8rem;
+                    background-color: $red;
+                    border-radius: 5px;
+                    color: $white;
+                    @include font(1.4rem, 600, normal);
+                    @include mq_min_768{
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+        .total-money {
+            @include flex(flex, space-between, center, nowrap);
+            @include font(1.6rem, 600, normal);
+            margin: 3rem 0;
+            padding: 1rem;
+            color: $white;
+            background-color: $red;
+            border-radius: 5px;
+            opacity: .8;
+            .icon-money {
+                margin-right: .3rem;
+            }
+        }
+        .buyer-info {
+            h5 {
+                @include font(1.8rem, 500, normal);
+            }
+            form {
+                input[type="text"], textarea {
+                    width: 100%;
+                    margin-top: 1.2rem;
+                    padding: 1rem .8rem;
+                    outline: none;
+                    border: none;
+                    border: 1px solid #c3c3c3;
+                    border-radius: 5px;
+                    &::placeholder {
+                        font-family: $FQuicksand;
+                        font-size: 1.5rem;
+                    }
+                }
+                h6 {
+                    margin-top: 1rem;
+                    @include font(1.5rem, 500, normal);
+                }
+                .payment-method {
+                    li {
+                        margin-top: .8rem;
+                        @include flex(flex, flex-start, center, nowrap);
+                        input[type="radio"] {
+                            width: auto;
+                        }
+                    }
+                }
+                .button-submit {
+                    display: block;
+                    @include font(1.6rem, 600, normal);
+                    margin-top: 3rem;
+                    padding: 1rem;
+                    text-align: center;
+                    color: $white;
+                    background-color: $red;
+                    border-radius: 5px;
+                    @include mq_min_768{
+                        margin: 3rem 0;
+                    }
+                    .icon-box-usd {
+                        margin-right: .3rem;
+                    }
+                }
+            }
+        }
+    }
+}

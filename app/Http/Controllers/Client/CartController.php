@@ -37,6 +37,26 @@ class CartController extends Controller
         return redirect()->back();
     }
 
+    /* Function Handle Buy Now */
+    public function buyNow(Request $request, $id)
+    {
+        $product = $this->product->findOrFail($id);
+        $product['quantity'] = $request->product_quantity;
+
+        $cart = [];
+        $cart[] = $product;
+        
+        if(Session::has('cart')){
+            $cartOld = Session::get("cart");
+            $cartNew = array_merge($cartOld, $cart);
+            Session::put("cart", $cartNew);
+        }else{
+            Session::put("cart", $cart);
+        }
+
+        return redirect()->route('client.cart.showCart');
+    }
+
     /* Function Handle Show Cart */
     public function showCart() {
         $handle_money = [];
