@@ -1,5 +1,5 @@
 @extends('client.layouts.app')
-@section('title', 'Cart')
+@section('title', 'X-Mobile Cart')
 
 @section('cart')
     <div class="cart">

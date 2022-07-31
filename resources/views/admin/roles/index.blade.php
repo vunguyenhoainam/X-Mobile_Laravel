@@ -10,7 +10,7 @@
             <a href="{{ route('roles.create') }}" class="btn btn-primary">Create Role</a>
         </div>
         <div class="table-content">
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered table-hover text-center">
                 <tr>
                     <th>#</th>
                     <th>Name</th>
@@ -20,10 +20,10 @@
 
                 @foreach ($roles as $key => $role)
                     <tr>
-                        <td>{{ $key + 1 }}</td>
-                        <td>{{ $role->name }}</td>
-                        <td>{{ $role->display_name }}</td>
-                        <td class="d-flex justify-content-center">
+                        <td class="align-middle">{{ $key + 1 }}</td>
+                        <td class="align-middle">{{ $role->name }}</td>
+                        <td class="align-middle">{{ $role->display_name }}</td>
+                        <td class="d-flex justify-content-center align-middle">
                             <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-success mr-3">Edit</a>
                             <form action="{{ route('roles.destroy', $role->id) }}" method="POST">
                                 @csrf

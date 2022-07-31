@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Users\CreateUserRequest;
 use App\Http\Requests\Users\UpdateUserRequest;
 use App\Models\Role;
-use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
@@ -44,13 +43,7 @@ class UserController extends Controller
         $user->images()->create(['url' => $dataCreate['image']]);
 
         $user->roles()->attach($dataCreate['role_ids']);
-        // return to_route('users.index')->with(['message' => 'create success']);
         return redirect('users');
-    }
-
-    public function show($id)
-    {
-        //
     }
 
     public function edit($id)
@@ -77,6 +70,7 @@ class UserController extends Controller
         $user->images()->delete();
         $user->images()->create(['url' => $dataUpdate['image']]);
         $user->roles()->sync($dataUpdate['role_ids'] ?? []);
+
         return redirect('users');
     }
 
